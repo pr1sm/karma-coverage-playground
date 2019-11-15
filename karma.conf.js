@@ -94,14 +94,17 @@ module.exports = function(config) {
     concurrency: Infinity,
 
     coverageReporter: {
-      includeAllSources: true,
-      type: 'html',
       instrumenterOptions: {
         istanbul: {
           // Required to get source mapping of es5 js
           produceSourceMap: true,
         },
       },
+
+      // Generate an html report to view results in coverage/
+      type: 'html',
+      dir: 'coverage',
+      subdir: '.',
     },
 
     // Karma Typescript Config
