@@ -18,12 +18,15 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'node_modules/@babel/polyfill/dist/polyfill.js',
+      // JS sources
       { pattern: 'src/**/*.js' },
       { pattern: 'test/**/*.test.js' },
 
+      // CS sources
       { pattern: 'src/**/*.coffee' },
       { pattern: 'test/**/*.test.coffee' },
 
+      // TS sources
       { pattern: 'src/**/*.ts' },
       { pattern: 'test/**/*.ts' },
     ],
@@ -37,14 +40,18 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      // Setup for es5 js -- just use karma-coverage
       'src/**/*.es5.js': ['coverage'],
 
+      // Setup for babel js -- can use istanbul babel plugin instead of karma-coverage
       'src/**/*.webpack.js': ['webpack'],
       'test/**/*.test.js': ['webpack'],
 
+      // Setup for coffeescript -- preprocess, then use karma-coverage
       'src/**/*.coffee': ['coffee', 'coverage'],
       'test/**/*.test.coffee': ['coffee'],
 
+      // Setup for typescript -- preprocess, then use karma-coverage
       'src/**/*.ts': ['karma-typescript', 'coverage'],
       'test/**/*.test.ts': ['karma-typescript'],
     },
@@ -91,6 +98,7 @@ module.exports = function(config) {
       type: 'html',
       instrumenterOptions: {
         istanbul: {
+          // Required to get source mapping of es5 js
           produceSourceMap: true,
         },
       },
