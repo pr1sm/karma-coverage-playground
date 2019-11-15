@@ -20,3 +20,6 @@ After cloning the project, run the following commands
 $ npm install # only need to do this once after cloning/pulling!
 $ npm run coverage
 ```
+
+Once you run the coverage script, you can view the generated coverage report by opening the `index.html` file in the `coverage/` folder.
+> You can compare this to the local reference in the `docs/` folder or the [hosted reference](https://pr1sm.github.io/karma-coverage-playground/)
