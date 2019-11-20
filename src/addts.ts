@@ -12,7 +12,12 @@ function subtract(a: number, b: number): number {
   return a - b;
 }
 
+function throwError(): void {
+  throw new Error('testing...');
+}
+
 export {
   add,
   subtract,
+  throwError,
 };

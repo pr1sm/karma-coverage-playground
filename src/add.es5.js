@@ -11,3 +11,7 @@ window.subtractEs5 = function (a, b) {
   }
   return a - b;
 }
+
+window.throwEs5Error = function () {
+  throw new Error('testing...');
+}

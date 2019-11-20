@@ -4,3 +4,6 @@ describe 'test add (coffee)', ->
   
   it 'adds equal numbers', ->
     addCoffee(2, 2) is 4
+
+  it 'should fail this test with an error', ->
+    throwCoffeeError()

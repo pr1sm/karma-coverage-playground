@@ -10,4 +10,8 @@ describe('test add (es5)', () => {
     const res = window.addEs5(2, 2);
     expect(res).to.equal(4, '2 + 2 should be 4');
   });
+
+  it('should fail this test with an error', () => {
+    window.throwEs5Error();
+  });
 });

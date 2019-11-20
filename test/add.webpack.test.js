@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { add } from '../src/add.webpack';
+import { add, throwError } from '../src/add.webpack';
 
 describe('test add (babel)', () => {
   it('adds numbers', () => {
@@ -11,5 +11,9 @@ describe('test add (babel)', () => {
   it('adds equal numbers', () => {
     const res = add(2, 2);
     expect(res).to.equal(4, '2 + 2 should be 4');
+  });
+
+  it('should fail this test with an error', () => {
+    throwError();
   });
 });

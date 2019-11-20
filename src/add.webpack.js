@@ -12,7 +12,12 @@ const subtract = (a, b) => {
   return a - b;
 }
 
+const throwError = () => {
+  throw new Error('testing...');
+}
+
 export {
   add,
   subtract,
+  throwError,
 };
